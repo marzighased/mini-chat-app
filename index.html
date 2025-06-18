@@ -4,8 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>mini chat App</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
+    <div class="chat-container">
+        <div class="chat-header">
+            <span>چت ساده</span>
+            <button class="clear-btn" onclick="clearChat()">Delete</button>
+        </div>
+        
+        <div class="chat-messages" id="messages"></div>
+        
+        <div class="chat-input">
+            <input type="text" id="username" class="username-input" placeholder="Name" value="User">
+            <input type="text" id="messageInput" class="message-input" placeholder="Message...">
+            <button class="send-btn" onclick="sendMessage()">Send</button>
+        </div>
+    </div>
 </body>
 </html>
