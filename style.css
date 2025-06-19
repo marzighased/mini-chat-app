@@ -56,3 +56,37 @@ body {
     display: flex;
     gap: 10px;
 }
+
+.username-input {
+    width: 100px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+.message-input {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+.send-btn, .clear-btn {
+    padding: 8px 15px;
+    border: 1px solid #333;
+    background: white;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+.send-btn:hover, .clear-btn:hover {
+    background: #333;
+    color: white;
+}
+
+.clear-btn {
+    border: 1px solid #999;
+    color: #999;
+    font-size: 12px;
+    padding: 5px 10px;
+}
