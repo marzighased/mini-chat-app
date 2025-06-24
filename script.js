@@ -30,15 +30,13 @@ function displayMessages() {
     const container = document.getElementById('messages');
     container.innerHTML = '';
     
-    messages.forEach(message => {
+    for (let i = 0; i < messages.length; i++) {
+        const message = messages[i];
         const div = document.createElement('div');
         div.className = 'message';
-        div.innerHTML = `
-            <span class="message-time">${message.time}</span>
-            <strong>${message.username}:</strong> ${message.text}
-        `;
+        div.innerHTML = message.time + ' <strong>' + message.username + ':</strong> ' + message.text;
         container.appendChild(div);
-    });
+    }
     
     container.scrollTop = container.scrollHeight;
 }
