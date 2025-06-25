@@ -6,24 +6,21 @@ window.onload = function() {
 };
 
 function sendMessage() {
-    const username = document.getElementById('username').value.trim();
+    const username = document.getElementById('username').value || 'User';
     const messageInput = document.getElementById('messageInput');
-    const messageText = messageInput.value.trim();
+    const messageText = messageInput.value;
     
-    if (messageText === '') return;
+    if (!messageText) return;
     
-    const message = {
-        username: username || 'User',
+    messages.push({
+        username: username,
         text: messageText,
-        time: new Date().toLocaleTimeString( 'en-US', {hour: '2-digit', minute: '2-digit'})
-    };
-
-    messages.push(message);
+        time: new Date().toLocaleTimeString()
+    });
+    
     saveMessages();
     displayMessages();
-    
     messageInput.value = '';
-    messageInput.focus();
 }
 
 function displayMessages() {
@@ -39,4 +36,8 @@ function displayMessages() {
     }
     
     container.scrollTop = container.scrollHeight;
+}
+
+function saveMessages() {
+    localStorage.setItem('chatMessages', JSON.stringify(messages));
 }
