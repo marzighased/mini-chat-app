@@ -41,3 +41,11 @@ function displayMessages() {
 function saveMessages() {
     localStorage.setItem('chatMessages', JSON.stringify(messages));
 }
+
+function loadMessages() {
+    const saved = localStorage.getItem('chatMessages');
+    if (saved) {
+        messages = JSON.parse(saved);
+    }
+}
+        
