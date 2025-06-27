@@ -56,4 +56,10 @@ function clearChat() {
         displayMessages();
     }
 }
-        
+ 
+//send with Enter Key//
+document.getElementById('messageInput').addEventListener('keypress', function(e) {
+    if (e.key === 'Enter') {
+        sendMessage();
+    }
+});
