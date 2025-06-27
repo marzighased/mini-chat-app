@@ -48,4 +48,12 @@ function loadMessages() {
         messages = JSON.parse(saved);
     }
 }
+
+function clearChat() {
+    if (confirm('Clear all messages?')) {
+        messages = [];
+        localStorage.removeItem('chatMessages');
+        displayMessages();
+    }
+}
         
