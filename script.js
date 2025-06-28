@@ -8,9 +8,15 @@ window.onload = function() {
 function sendMessage() {
     const username = document.getElementById('username').value || 'User';
     const messageInput = document.getElementById('messageInput');
-    const messageText = messageInput.value;
+    const messageText = messageInput.value.trim();
     
-    if (!messageText) return;
+    if (!messageText) {
+        showError('Please write a message!');
+        messageInput.focus();
+        return;
+    }
+    
+    hideError();
     
     messages.push({
         username: username,
@@ -56,6 +62,21 @@ function clearChat() {
         displayMessages();
     }
 }
+
+function showError(message) {
+    const errorDiv = document.getElementById('errorMessage');
+    errorDiv.textContent = message;
+    errorDiv.style.display = 'block';
+    
+    setTimeout(function() {
+        hideError();
+    }, 3000);
+}
+
+function hideError() {
+    document.getElementById('errorMessage').style.display = 'none';
+}
+    
  
 //send with Enter Key//
 document.getElementById('messageInput').addEventListener('keypress', function(e) {
