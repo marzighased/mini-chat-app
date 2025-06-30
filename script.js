@@ -76,6 +76,16 @@ function showError(message) {
 function hideError() {
     document.getElementById('errorMessage').style.display = 'none';
 }
+
+if (messageText.length > 100) {
+    showError('Message is too long! (max 100 characters)');
+    return;
+}
+
+if (username.length < 2) {
+    showError('Username must be at least 2 characters!');
+    return;
+}
     
  
 //send with Enter Key//
